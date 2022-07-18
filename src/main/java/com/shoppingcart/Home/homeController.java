@@ -28,6 +28,20 @@ public class homeController {
     @Autowired
     RoleServices roleServ;
     @Autowired private CartItemServices cartServ;
+  /*  @RequestMapping("/login")
+    public String login(Model model){
+        model.addAttribute("customer",new Customers());
+        return "login";
+    }
+    @RequestMapping(value = "/loginme" ,method = RequestMethod.POST)
+    public String validatelogging(@ModelAttribute("customer")Customers customer, @RequestParam("password")String pass){
+        System.out.println(customer.getEmail());
+        boolean validuser=custServ.getCustomerByEmail(customer.getEmail(),pass);
+        if(validuser){
+            return "redirect:/prod/allproduct";
+        }
+        else return "errorpage";
+    }*/
     @RequestMapping("/")
     public String home(@AuthenticationPrincipal MyUserDetails userdetails,Model model){
         if(userdetails==null)return "login";
@@ -64,10 +78,8 @@ public class homeController {
         for(CartItem item:MyCarts){
             MyProducts.put(item.getProduct(),item.getQuantity());
         }
-        //System.out.println(MyCarts);
         model.addAttribute("fname",fname);
         model.addAttribute("myproducts",MyProducts);
-       // model.addAttribute("cartid",MyCarts);
         return "usercarts";
     }
 }

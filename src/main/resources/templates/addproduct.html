@@ -28,11 +28,11 @@
                 <input class="form-control" type="text" name="brand_id" th:field="*{brand_id}" placeholder="brand id" >
 
                 <p>
-                    <input type="file" name="fileImage" id="fileImage" accept="image/*">
+                    <input required type="file" name="fileImage" id="fileImage"  accept="image/*">
                 </p>
-                <p>
+               <!-- <p>
                     <img src="thumbnail" alt="image preview">
-                </p>
+                </p>-->
                 <input class="btn btn-success" type="submit" value="Add Product">
             </form>
         </div>
