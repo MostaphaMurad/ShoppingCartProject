@@ -9,7 +9,10 @@ import com.shoppingcart.Models.Roles;
 import com.shoppingcart.RoleServices.RoleServices;
 import com.shoppingcart.UserDetailsConfig.MyUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,6 +45,12 @@ public class homeController {
         }
         else return "errorpage";
     }*/
+    @GetMapping("/login")
+    public String ShowLoginPage(){
+        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+        if(authentication==null||authentication instanceof AnonymousAuthenticationToken)return "login";
+        else return "redirect:/";
+    }
     @RequestMapping("/")
     public String home(@AuthenticationPrincipal MyUserDetails userdetails,Model model){
         if(userdetails==null)return "login";

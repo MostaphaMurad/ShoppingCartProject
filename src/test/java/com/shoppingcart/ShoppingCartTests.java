@@ -11,8 +11,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
-
-import javax.management.relation.Role;
 import java.util.List;
 
 @DataJpaTest
@@ -23,7 +21,8 @@ public class ShoppingCartTests {
     CartItemRepo cartRepo;
     @Autowired
     TestEntityManager testEntityManager;
-
+    @Test
+    public void test(){}
     @Test
     public void TestAssignRoleToCustomer(){
         Roles role=testEntityManager.find(Roles.class,2);

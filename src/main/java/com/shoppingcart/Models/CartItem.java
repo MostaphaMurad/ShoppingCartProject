@@ -1,10 +1,8 @@
 package com.shoppingcart.Models;
-
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-
 @Entity
 @Table(name = "cart_items")
 public class CartItem {
