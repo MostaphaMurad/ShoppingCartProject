@@ -1,6 +1,6 @@
 package com.shoppingcart.UserDetailsConfig;
 
-import com.shoppingcart.CustomerRepository.CustomerRepository;
+import com.shoppingcart.Repositories.CustomerRepository;
 import com.shoppingcart.Models.Customers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

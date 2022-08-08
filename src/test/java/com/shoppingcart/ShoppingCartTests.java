@@ -1,6 +1,6 @@
 package com.shoppingcart;
 
-import com.shoppingcart.CartItemRepository.CartItemRepo;
+import com.shoppingcart.Repositories.CartItemRepo;
 import com.shoppingcart.Models.CartItem;
 import com.shoppingcart.Models.Customers;
 import com.shoppingcart.Models.Products;
